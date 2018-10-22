@@ -16,7 +16,7 @@ app.use('/api/users', userRouter);
 
 
 app.get('/', (req, res) => {
-    console.log('user route');
+    console.log('user route from server');
     res.sendStatus(200);
 });
 
