@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import {
   HashRouter as Router,
   Route,
@@ -24,7 +23,7 @@ class App extends Component {
               path="/home"
               component={Home}
               className='appFrame'
-              />
+            />
             <Route render={() => <h1>404</h1>} />
           </Switch>
           </div>

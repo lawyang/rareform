@@ -7,6 +7,7 @@ class Header extends Component {
     render() {
         return(
             <div>
+                <h1>RareForm</h1>
                 <p>This is the Header</p>
             </div>
         )
