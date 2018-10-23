@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+const auth = require('../auth/index');
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -13,6 +16,7 @@ app.use(express.static('build'));
 
 // Routes
 app.use('/api/users', userRouter);
+app.use('/auth', auth);
 
 
 app.get('/', (req, res) => {

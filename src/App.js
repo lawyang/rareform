@@ -10,6 +10,8 @@ import {
 import Header from './components/Global/Header/Header';
 import Home from './components/Pages/Home/Home';
 
+
+
 class App extends Component {
   render() {
     return (
