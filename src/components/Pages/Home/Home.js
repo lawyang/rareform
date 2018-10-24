@@ -2,11 +2,9 @@ import React, { Component }from 'react';
 import './Home.css';
 import Header from '../../Global/Header/Header';
 
-// Material UI Components
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import { connect } from 'react-redux';
+
+import Login from '../Login/Login';
 
 class Home extends Component {
     state = {
@@ -17,40 +15,7 @@ class Home extends Component {
             <div class="grid-container">
                 <div class="Header"><Header /></div>
                 <div class="login">
-                    <Card>
-                        <CardContent>
-                            <TextField
-                                id="outline-full-width"
-                                label="username"
-                                placeholder="username"
-                                // fullWidth
-                                margin="normal"
-                            >
-                            </TextField>
-                            <br/>
-                            <TextField
-                                id="outline-full-width"
-                                label="password"
-                                placeholder="password"
-                                // fullWidth
-                                margin="normal"
-                            >
-                            </TextField>
-                        </CardContent>
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                            >
-                                Submit
-                            </Button>
-                            <br/>
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                            >
-                                New User
-                            </Button>
-                    </Card>
+                    <Login />
                 </div>
             </div>
         )
