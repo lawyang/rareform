@@ -20,10 +20,22 @@ router.get('/users', (req, res) => {
         });
 });
 
-router.post('/signup', (req, res) => {
-    res.json({
-        message: '✅'
-    });
+
+
+function validateUser(user){
+    const validEmail = typeof user.email == 'string' && user.email.trim() !== '';
+    const validPassword = typeof user.password == 'string' && user.password.trim() !== '' && user.password.trm().length >= 6;
+    return validEmail && validPassword;
+}
+
+router.post('/signup', (req, res, next) => {
+    if(validateUser(req.body)) {
+        res.json({
+            message: '✅'
+        })
+    } else {
+        next(new Error('Invalid User'));
+    }
 });
 
 module.exports = router;

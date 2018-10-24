@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const sessionMiddleware = require('./modules/session-middleware');
+
 
 const auth = require('../auth/index');
 
@@ -17,6 +19,10 @@ app.use(express.static('build'));
 // Routes
 app.use('/api/users', userRouter);
 app.use('/auth', auth);
+
+// Passport Session Config
+app.use(sessionMiddleware);
+
 
 
 app.get('/', (req, res) => {
