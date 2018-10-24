@@ -13,7 +13,7 @@ const userRouter = require('./routes/user.router');
 
 
 // Routes
-app.use('/api/users', userRouter);
+app.use('/users', userRouter);
 
 // Passport Session Config
 app.use(sessionMiddleware);

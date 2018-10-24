@@ -22,8 +22,8 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // Will encrpyt the password before it gets inserted into the database
 router.post('/register',(req, res, next) => {
     const username = req.body.username;
-    const password = encryptLib.encriptPassword(req.body.password);
-    const queryText = `INSERT INTO users (username, hash) VALUES $1, $2 RETURNING id`;
+    const password = encryptLib.encryptPassword(req.body.password);
+    const queryText = `INSERT INTO users (username, hash) VALUES ($1, $2) RETURNING id`;
     pool.query(queryText, [username, password])
         .then((result) => {
             console.log(`successfully created new user`);
