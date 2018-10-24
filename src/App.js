@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-          <Header />
+          {/* <Header /> */}
           <Switch>
             <Redirect exact from="/" to="/home" />
             <Route
