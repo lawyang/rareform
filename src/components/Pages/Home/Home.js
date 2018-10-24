@@ -16,7 +16,7 @@ class Home extends Component {
         return(
             <div class="grid-container">
                 <div class="Header"><Header /></div>
-                <div class="area1">
+                <div class="login">
                     <Card>
                         <CardContent>
                             <TextField
@@ -52,7 +52,6 @@ class Home extends Component {
                             </Button>
                     </Card>
                 </div>
-                <div class="area2"> Area2 </div>
             </div>
         )
     }

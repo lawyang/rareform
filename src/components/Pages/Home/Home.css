@@ -1,18 +1,15 @@
-
 .grid-container {
-    display: grid;
-    height: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-gap: 1px 1px;
-    grid-template-areas: "Header Header Header Header" "area1 area1 area2 area2" "area1 area1 area2 area2" "area1 area1 area2 area2";
-    border-radius: 10px;
-    border-color: black;
-  }
-  
-  .Header { grid-area: Header; }
-  
-  .area1 { grid-area: area1; }
-  
-  .area2 { grid-area: area2; }
-  
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "header header header header" ". login login ." ". . . ." ". . . .";
+}
+
+.header { 
+  grid-area: header; 
+  text-align: center;
+}
+
+.login { grid-area: login; }
