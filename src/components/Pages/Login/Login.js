@@ -13,6 +13,10 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
+const mapStateToProps = state => ({
+
+})
+
 class Login extends Component {
     constructor(props){
         super(props);
@@ -23,16 +27,33 @@ class Login extends Component {
     }
 
     componentDidMount() {
+        // this.props.dispatch(clearError());
+    }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user.userName) {
+          this.props.history.push('/user');
+        }
     }
 
     login = (event) => {
         event.preventDefault();
         if (this.state.username === '' || this.state.password === '') {
-                this.props.dispatch(formError());
+            console.log('error logging in');    
+            this.props.dispatch(formError());
+
         } else {
+            console.log('hello succesfull login')
             this.props.dispatch(triggerLogin(this.state.username, this.state.password));
         }
+    }
+
+    handleInputChangeFor = propertyName => (event) => {
+        this.setState({
+            [propertyName]: event.target.value,
+          });
+        console.log('This is the username:', this.state.username);
+        console.log('This is the password:', this.state.password);
     }
 
     loginButton = () =>{
@@ -51,6 +72,8 @@ class Login extends Component {
                             placeholder="username"
                             // fullWidth
                             margin="normal"
+                            value={this.state.username}
+                            onChange={this.handleInputChangeFor('username')}
                         >
                         </TextField>
                         <br/>
@@ -60,6 +83,8 @@ class Login extends Component {
                             placeholder="password"
                             // fullWidth
                             margin="normal"
+                            value={this.state.password}
+                            onChange={this.handleInputChangeFor('password')}
                         >
                         </TextField>
                     </CardContent>
