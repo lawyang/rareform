@@ -12,9 +12,9 @@ class Home extends Component {
 
     render() {
         return(
-            <div class="grid-container">
-                <div class="Header"><Header /></div>
-                <div class="login">
+            <div className="grid-container">
+                <div className="Header"><Header /></div>
+                <div className="login">
                     <Login />
                 </div>
             </div>
